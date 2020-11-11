@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "rentcars-web"
+    }
+  },
+  "defaultProject": "rentcars-web",
+  "cli": {
+    "analytics": "39a07a88-1be1-43a6-aa87-654c7cfd6474"
+  }
 }
