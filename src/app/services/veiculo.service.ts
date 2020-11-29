@@ -10,8 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class VeiculoService {
 
-  url = 'https://localhost:44305/api/Veiculo/';
-  //url = 'https://rentcars-api.herokuapp.com/api/Veiculo/';
+  url = 'https://rentcars-api.herokuapp.com/api/Veiculo/';
   
   constructor(private httpClient: HttpClient) { }
   
@@ -23,7 +22,7 @@ export class VeiculoService {
     return this.httpClient.get<Veiculo[]>(this.url);
   }
 
-  getCarsByFilter(filter: FilterVeiculo): Observable<Veiculo[]> {
+  getVeiculosByFilter(filter: FilterVeiculo): Observable<Veiculo[]> {
     let query = 'filter?';
     const filters = new Array<string>();
 

@@ -22,9 +22,8 @@ export class CarSearchComponent implements OnInit {
 
   public onSearch(): void {    
     const filter = this.filterForm.value as FilterVeiculo;
-    this.veiculoService.getCarsByFilter(filter).subscribe((data: Veiculo[]) => {
+    this.veiculoService.getVeiculosByFilter(filter).subscribe((data: Veiculo[]) => {
       this.veiculos = data;
-      console.log(data);
     }, (error: any) => {
       console.log("erro no filtro");
     });
