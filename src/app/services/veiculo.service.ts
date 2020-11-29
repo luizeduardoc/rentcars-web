@@ -1,4 +1,4 @@
-import { Veiculo } from './../models/Veiuclo';
+import { Veiculo } from './../models/Veiculo';
 import { FilterVeiculo } from './../models/FilterVeiculo';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';

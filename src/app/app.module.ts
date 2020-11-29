@@ -1,14 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CarSearchComponent } from './car-search/car-search.component';
-import { SideBarComponent } from './side-bar/side-bar.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { CarSearchComponent } from './components/car-search/car-search.component';
 
 @NgModule({
   declarations: [

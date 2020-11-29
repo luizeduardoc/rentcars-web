@@ -1,8 +1,8 @@
-import { Veiculo } from './../models/Veiuclo';
+import { Veiculo } from '../../models/Veiculo';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { FilterVeiculo } from '../models/FilterVeiculo';
-import { VeiculoService } from '../services/veiculo.service';
+import { FilterVeiculo } from '../../models/FilterVeiculo';
+import { VeiculoService } from '../../services/veiculo.service';
 
 @Component({
   selector: 'app-car-search',
