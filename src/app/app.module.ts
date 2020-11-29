@@ -7,20 +7,22 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CarSearchComponent } from './car-search/car-search.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
-import { FilterComponent } from './car-search/filter/filter.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     CarSearchComponent,
-    SideBarComponent,
-    FilterComponent
+    SideBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

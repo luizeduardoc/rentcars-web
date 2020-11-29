@@ -1,304 +1,61 @@
-<app-filter></app-filter>
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h4 mb-0 text-gray-800">Filtro</h1>
+</div>
+<form class="user" (ngSubmit)="onSearch()" [formGroup]="filterForm">
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <input formControlName="cor" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Cor">
+        </div>
+        <div class="col-sm-4">
+            <input formControlName="marca" type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Marca">
+        </div>
+        <div class="col-sm-4">
+            <input formControlName="modelo" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Modelo">
+        </div>
+    </div>
+    <div class="form-group row pt-2">
+        <!-- <div class="col-sm-2">
+            <div class="custom-control custom-checkbox medium">
+                <input type="checkbox" class="custom-control-input" id="customCheck">
+                <label class="custom-control-label" for="customCheck">Ar Condicionado</label>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="custom-control custom-checkbox medium">
+                <input type="checkbox" class="custom-control-input" id="customCheck">
+                <label class="custom-control-label" for="customCheck">Automático</label>
+            </div>
+        </div>         -->
+        <div class="col-sm-2">
+            <button type="submit" class="btn btn-primary btn-user btn-block">
+                Search
+            </button>
+        </div>
+    </div>
+</form>
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h4 mb-0 text-gray-800">Cars</h1>
 </div>
 
 <div class="car-list">
     <div class="row">
-
-        <div class="col-xl-4 col-md-6 mb-4">
+        <div *ngFor="let veiculo of veiculos" class="col-xl-4 col-md-6 mb-4">
             <div class="card border-left-success shadow h-150 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col-md-6">
                             <div class="text-md font-weight-bold text-uppercase mb-1">
-                                Hyundai HB20
+                                {{ veiculo.marca }} {{ veiculo.modelo }}
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                 <img src="./assets/images/hyundai_hb20-2020-2021.png">
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <ul>
-                                <li>No amendment fees</li>
-                                <li>Automatic</li>
-                                <li>Air Conditioning</li>
-                                <li>Vehicle Coverage</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-150 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col-md-6">
-                            <div class="text-md font-weight-bold text-uppercase mb-1">
-                                Hyundai HB20
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                <img src="./assets/images/hyundai_hb20-2020-2021.png">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <ul>
-                                <li>No amendment fees</li>
-                                <li>Automatic</li>
-                                <li>Air Conditioning</li>
-                                <li>Vehicle Coverage</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-150 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col-md-6">
-                            <div class="text-md font-weight-bold text-uppercase mb-1">
-                                Hyundai HB20
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                <img src="./assets/images/hyundai_hb20-2020-2021.png">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <ul>
-                                <li>No amendment fees</li>
-                                <li>Automatic</li>
-                                <li>Air Conditioning</li>
-                                <li>Vehicle Coverage</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-150 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col-md-6">
-                            <div class="text-md font-weight-bold text-uppercase mb-1">
-                                Hyundai HB20
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                <img src="./assets/images/hyundai_hb20-2020-2021.png">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <ul>
-                                <li>No amendment fees</li>
-                                <li>Automatic</li>
-                                <li>Air Conditioning</li>
-                                <li>Vehicle Coverage</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-150 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col-md-6">
-                            <div class="text-md font-weight-bold text-uppercase mb-1">
-                                Hyundai HB20
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                <img src="./assets/images/hyundai_hb20-2020-2021.png">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <ul>
-                                <li>No amendment fees</li>
-                                <li>Automatic</li>
-                                <li>Air Conditioning</li>
-                                <li>Vehicle Coverage</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-150 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col-md-6">
-                            <div class="text-md font-weight-bold text-uppercase mb-1">
-                                Hyundai HB20
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                <img src="./assets/images/hyundai_hb20-2020-2021.png">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <ul>
-                                <li>No amendment fees</li>
-                                <li>Automatic</li>
-                                <li>Air Conditioning</li>
-                                <li>Vehicle Coverage</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-150 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col-md-6">
-                            <div class="text-md font-weight-bold text-uppercase mb-1">
-                                Hyundai HB20
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                <img src="./assets/images/hyundai_hb20-2020-2021.png">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <ul>
-                                <li>No amendment fees</li>
-                                <li>Automatic</li>
-                                <li>Air Conditioning</li>
-                                <li>Vehicle Coverage</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-150 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col-md-6">
-                            <div class="text-md font-weight-bold text-uppercase mb-1">
-                                Hyundai HB20
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                <img src="./assets/images/hyundai_hb20-2020-2021.png">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <ul>
-                                <li>No amendment fees</li>
-                                <li>Automatic</li>
-                                <li>Air Conditioning</li>
-                                <li>Vehicle Coverage</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-150 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col-md-6">
-                            <div class="text-md font-weight-bold text-uppercase mb-1">
-                                Hyundai HB20
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                <img src="./assets/images/hyundai_hb20-2020-2021.png">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <ul>
-                                <li>No amendment fees</li>
-                                <li>Automatic</li>
-                                <li>Air Conditioning</li>
-                                <li>Vehicle Coverage</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-150 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col-md-6">
-                            <div class="text-md font-weight-bold text-uppercase mb-1">
-                                Hyundai HB20
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                <img src="./assets/images/hyundai_hb20-2020-2021.png">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <ul>
-                                <li>No amendment fees</li>
-                                <li>Automatic</li>
-                                <li>Air Conditioning</li>
-                                <li>Vehicle Coverage</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-150 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col-md-6">
-                            <div class="text-md font-weight-bold text-uppercase mb-1">
-                                Hyundai HB20
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                <img src="./assets/images/hyundai_hb20-2020-2021.png">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <ul>
-                                <li>No amendment fees</li>
-                                <li>Automatic</li>
-                                <li>Air Conditioning</li>
-                                <li>Vehicle Coverage</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-150 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col-md-6">
-                            <div class="text-md font-weight-bold text-uppercase mb-1">
-                                Hyundai HB20
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                <img src="./assets/images/hyundai_hb20-2020-2021.png">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <ul>
-                                <li>No amendment fees</li>
-                                <li>Automatic</li>
-                                <li>Air Conditioning</li>
-                                <li>Vehicle Coverage</li>
+                            <ul>                                
+                                <li>{{ veiculo.cor }}</li>
+                                <li *ngIf="veiculo.automatico">Automatico</li>
+                                <li *ngIf="veiculo.arCondicionado">Ar condicionado</li>
                             </ul>
                         </div>
                     </div>
