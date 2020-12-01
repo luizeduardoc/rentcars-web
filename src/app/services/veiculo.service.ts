@@ -30,6 +30,10 @@ export class VeiculoService {
       filters.push(`ArCondicionado=${filter.arCondicionado}`);
     }
 
+    if(filter.automatico) {
+      filters.push(`Automatico=${filter.automatico}`);
+    }
+
     if(filter.cor) {
       filters.push(`Cor=${filter.cor}`);
     }

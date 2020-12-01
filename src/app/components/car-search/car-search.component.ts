@@ -12,7 +12,7 @@ import { VeiculoService } from '../../services/veiculo.service';
 export class CarSearchComponent implements OnInit {
 
   public filterForm: FormGroup;
-  public veiculos: Veiculo[];
+  public veiculos: Veiculo[] = [];
 
   constructor(private veiculoService: VeiculoService) { }
 
@@ -20,12 +20,14 @@ export class CarSearchComponent implements OnInit {
     this.buildForm();
   }
 
-  public onSearch(): void {    
+  public onSearch(): void {
     const filter = this.filterForm.value as FilterVeiculo;
+    console.log(filter);
     this.veiculoService.getVeiculosByFilter(filter).subscribe((data: Veiculo[]) => {
       this.veiculos = data;
+      console.log(data);
     }, (error: any) => {
-      console.log("erro no filtro");
+      console.log(error);
     });
   }
 
@@ -33,8 +35,10 @@ export class CarSearchComponent implements OnInit {
     this.filterForm = new FormGroup({
       cor: new FormControl(null),
       marca: new FormControl(null),
-      modelo: new FormControl(null)
-    })
+      modelo: new FormControl(null),
+      arCondicionado: new FormControl(false),
+      automatico: new FormControl(false)
+    });
   }
 
 }
