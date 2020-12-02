@@ -62,8 +62,13 @@
                                     <li>{{ veiculo.cor }}</li>
                                     <li *ngIf="veiculo.automatico">Automatico</li>
                                     <li *ngIf="veiculo.arCondicionado">Ar condicionado</li>
+                                    <li>{{ veiculo.preco | currency:'R$' }}</li>
                                 </ul>
                             </div>
+                        </div>
+                        <div class="row pd-2">
+                            <button class="btn btn-lg btn-outline-primary" (click)="open(content, veiculo)">Launch demo
+                                modal</button>
                         </div>
                     </div>
                 </div>
@@ -77,3 +82,61 @@
         <p class="mb-0 text-gray-800">Nenhum veículo para mostrar.</p>
     </div>
 </div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 *ngIf="veiculoModal.tipoOperacao === 'Venda'" class="modal-title" id="modal-basic-title">Comprar</h4>
+        <h4 *ngIf="veiculoModal.tipoOperacao === 'Aluguel'" class="modal-title" id="modal-basic-title">Alugar</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <form [formGroup]="modalForm" (ngSubmit)="onOperacao()">
+        <div *ngIf="veiculoModal.tipoOperacao === 'Aluguel'" class="modal-body">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="row">
+                        <div class="col-md-12 pb-3">
+                            <input formControlName="dataRetirada" type="text" class="form-control form-control-user"
+                                id="dataRetirada" placeholder="Data Retirada (YYYY-mm-dd)">
+                        </div>
+                        <div class="col-md-12 pb-3">
+                            <input formControlName="horaRetirada" type="text" class="form-control form-control-user"
+                                id="horaRetirada" placeholder="Hora Retirada (HH:mm:ss)">
+                        </div>
+                        <div class="col-md-12 pb-3">
+                            <input formControlName="dataEntrega" type="text" class="form-control form-control-user"
+                                id="dataEntrega" placeholder="Data Entrega (YYYY-mm-dd)">
+                        </div>
+                        <div class="col-md-12 pb-3">
+                            <input formControlName="horaEntrega" type="text" class="form-control form-control-user"
+                                id="horaEntrega" placeholder="Hora Entrega (HH:mm:ss)">
+                        </div>
+                        <div class="col-md-12">
+                            <input formControlName="nomeAluguel" type="text" class="form-control form-control-user"
+                                id="nome" placeholder="Nome">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="veiculoModal.tipoOperacao === 'Venda'" class="modal-body">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input formControlName="nome" type="text" class="form-control form-control-user" id="nome"
+                                placeholder="Nome">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button *ngIf="veiculoModal.tipoOperacao === 'Venda'" type="submit" class="btn btn-outline-dark"
+                (click)="modal.close('Save click')">Comprar</button>
+            <button *ngIf="veiculoModal.tipoOperacao === 'Aluguel'" type="submit" class="btn btn-outline-dark"
+                (click)="modal.close('Save click')">Alugar</button>
+        </div>
+    </form>
+</ng-template>
