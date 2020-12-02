@@ -66,9 +66,15 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="row pd-2">
-                            <button class="btn btn-lg btn-outline-primary" (click)="open(content, veiculo)">Launch demo
-                                modal</button>
+                        <div class="row pt-4">
+                            <div class="col-md-12 d-flex w-100 justify-content-center">
+                                <button *ngIf="veiculo.tipoOperacao === 'Venda'"
+                                    class="btn btn-lg btn-block text-center w-20 btn-primary"
+                                    (click)="open(content, veiculo)">Comprar
+                                </button>
+                                <button *ngIf="veiculo.tipoOperacao === 'Aluguel'" class="btn btn-block btn-lg btn-primary"
+                                    (click)="open(content, veiculo)">Alugar</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -123,7 +129,7 @@
         <div *ngIf="veiculoModal.tipoOperacao === 'Venda'" class="modal-body">
             <div class="form-group">
                 <div class="input-group">
-                    <div class="row">
+                    <div class="row w-100">
                         <div class="col-md-12">
                             <input formControlName="nome" type="text" class="form-control form-control-user" id="nome"
                                 placeholder="Nome">
